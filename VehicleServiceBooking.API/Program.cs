@@ -1,3 +1,4 @@
+using Swashbuckle.AspNetCore.SwaggerUI;
 using VehicleServiceBooking.Api;
 using VehicleServiceBooking.Api.Endpoints;
 using VehicleServiceBooking.Application;
@@ -18,7 +19,16 @@ var app = builder.Build();
 await DataModule.SeedDb(app.Services.CreateScope());
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) app.MapOpenApi();
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+
+    app.UseSwaggerUI(opt =>
+    {
+        opt.SwaggerEndpoint("/openapi/v1.json", "VehicleServiceBooking.API v1");
+        opt.DisplayOperationId();
+    });
+}
 
 app.UseHttpsRedirection();
 

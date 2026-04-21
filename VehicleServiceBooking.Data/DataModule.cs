@@ -11,7 +11,7 @@ public static class DataModule
     public static void AddDataModule(IServiceCollection services, ConfigurationManager builderConfiguration)
     {
         services.AddDbContext<DataContext>(options =>
-            options.UseSqlServer(builderConfiguration.GetConnectionString("DefaultConnection"))
+            options.UseSqlite(builderConfiguration.GetConnectionString("DefaultConnection"))
         );
     }
 
@@ -25,7 +25,7 @@ public static class DataModule
         }
         catch (InvalidOperationException ex)
         {
-            Console.WriteLine("Data");
+            Console.WriteLine("Error seeding database: " + ex.Message + "");
         }
     }
 }

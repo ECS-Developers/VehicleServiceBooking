@@ -67,7 +67,13 @@ or
 Once your models and repositories are implemented, run your initial migration:
 
 ```bash
-dotnet ef migrations add InitialCreate --project src/VehicleServiceBooking.Data --startup-project ./VehicleServiceBooking.API
+dotnet ef migrations add InitialCreate --project ./VehicleServiceBooking.Data --startup-project ./VehicleServiceBooking.API
+```
+
+The application will apply pending Migrations and seed data using the Data Seeder, if you want to apply it sooner you can use the command below:
+
+```bash
+dotnet ef database update --project ./VehicleServiceBooking.Data --startup-project ./VehicleServiceBooking.API
 ```
 
 ---
@@ -147,15 +153,14 @@ dotnet test
 
 ## Running the Application
 
-Update `appsettings.Development.json` with your local SQL Server connection
-string if you have not already done so, then run:
+The `appsettings.Development.json` has been setup with a default SQLite connection
+string you can change this if you wish, then run using your IDE of choice or:
 
 ```bash
 cd VehicleServiceBooking.API
 dotnet run
 ```
 
-The application will apply any pending migrations and seed the service types
-automatically on startup.
-
 Swagger UI will be available at:
+https://localhost:7212/swagger/index.html
+http://localhost:5274/swagger/index.html

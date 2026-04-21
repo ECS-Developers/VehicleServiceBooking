@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using VehicleServiceBooking.Data.Models;
 
 namespace VehicleServiceBooking.Data.DbContexts;
 
@@ -11,4 +12,6 @@ public class DataContext : DbContext
     public DataContext(DbContextOptions opt) : base(opt)
     {
     }
+    
+    // public DbSet<ServiceType> ServiceTypes { get; set; }
 }
