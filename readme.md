@@ -162,5 +162,5 @@ dotnet run
 ```
 
 Swagger UI will be available at:
-https://localhost:7212/swagger/index.html
-http://localhost:5274/swagger/index.html
+- https://localhost:7212/swagger/index.html or
+- http://localhost:5274/swagger/index.html
