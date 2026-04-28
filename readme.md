@@ -118,14 +118,11 @@ validation rules as `CreateAsync`.
 
 ### 3. API Layer
 
-The endpoint classes have been made for you.
+The endpoint empty classes have been templated, you will need to make the endpoints below:
 
-- `ServiceTypeEndpoints.cs` — add exception handling to the `GET`
-  endpoints so that validation failures return a structured `401 Not Found`
+- `ServiceTypeEndpoints.cs` — create a `GET` endpoint with exception handling which catches `401 Not Found`
 
-- `AppointmentEndpoints.cs` — add exception handling to the `POST` and `PUT`
-    endpoints so that validation failures return a structured `400 Bad Request`
-    response with a descriptive message
+- `AppointmentEndpoints.cs` — create both `POST` and `PUT` endpoints to allow Appointments to be made and updated, both endpoints should check for validation failes and return a `400 Bad Request` response with a descriptive message.
 
 ---
 
