@@ -38,7 +38,9 @@ Implement the following models with their requirements as listed below:
 - `Email` — Email contact for the customer
 - `Phone` — Phone contact for the customer
 - `Vehicle VIN` — VIN of the vehicle for service
-
+- `Service Type ID` — Relational Id for the service type of the booking
+- `Scheduled Date` - Date Time of the booking
+  
 Implement the repository or repositories:
 
 **`ServiceTypeRepository`**
