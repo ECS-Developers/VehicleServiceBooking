@@ -13,7 +13,7 @@ tests across the existing layers.
 
 ## What Has Been Provided
 
-- Full solution and project structure across three layers
+- Project structure across three layers
 - `DbContext` with connection string
 - `Program.cs` with DI registration and middleware
 - `~Module.cs` files to register DI on individual layers
